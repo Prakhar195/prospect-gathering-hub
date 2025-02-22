@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +13,8 @@ import { MapPin, Globe, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { ThemeProvider } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { BarChart } from "lucide-react";
 
 interface Prospect {
   id: string;
@@ -116,7 +117,17 @@ const Index = () => {
                 <h1 className="text-3xl font-semibold text-foreground">Companies</h1>
                 <p className="text-muted-foreground">Browse and filter company prospects</p>
               </div>
-              <ThemeToggle />
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  onClick={() => navigate("/insights")}
+                  className="gap-2"
+                >
+                  <BarChart className="h-4 w-4" />
+                  Insights
+                </Button>
+                <ThemeToggle />
+              </div>
             </div>
 
             <div className="relative">
